@@ -33,7 +33,7 @@ struct data_read_from_bme280_t
     float humidity;
     float pressure;
 };
-struct data_read_from_bme280_t my_data;
+extern struct data_read_from_bme280_t my_data;
 
 /**
  * @brief bme280 reader task
