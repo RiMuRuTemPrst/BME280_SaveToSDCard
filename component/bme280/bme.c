@@ -186,6 +186,7 @@ void BME280_delay_msek (u32 msek)
 {
     vTaskDelay(msek/portTICK_PERIOD_MS);
 }
+struct data_read_from_bme280_t my_data;
 
 /** Read form BME and Display on screen */
 void bme280_reader_task (void *ignore)

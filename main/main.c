@@ -85,7 +85,6 @@ static void save_inf(void *arg)
 
 
 
-/** Execution function when interrupt occur   */
 static void save_data (void *arg)
 {
     
@@ -116,6 +115,6 @@ void app_main()
         return;
     }
     i2c_master_bme_init(SDA_PIN, SCL_PIN);
-    // xTaskCreate(&bme280_reader_task, "bme_280_reader_task", (1024 *2), NULL, 6, NULL);
-    // xTaskCreate(&save_data, "save_data", (1024 *2), NULL,10, NULL);
+    xTaskCreate(&bme280_reader_task, "bme_280_reader_task", (1024 *2), NULL, 6, NULL);
+    xTaskCreate(&save_data, "save_data", (1024 *2), NULL,10, NULL);
 }
